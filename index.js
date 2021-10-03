@@ -7,6 +7,9 @@ app.use(express.json());
 const coursesRoute = require("./routes/courses");
 app.use("/api/courses", coursesRoute);
 
+const projectsRoute = require("./routes/projects");
+app.use("/api/projects", projectsRoute);
+
 
 
 
