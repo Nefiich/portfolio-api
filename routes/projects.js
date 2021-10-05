@@ -132,6 +132,28 @@ router.put('/edit/:id', (req, res)=>{
 
 });
 
+router.delete('/remove/:id', (req,res) =>{
+    if(!req.params.id){
+        res.status(400).send('Please provide an ID');
+        return;
+    }
+
+    con.getConnection((err, connection) => {
+        if(err) { 
+            console.log(err); 
+            return; 
+        }
+
+        var sql = `DELETE FROM projects WHERE id = '${req.params.id}'`;
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            connection.release();
+            console.log(`ID : ${req.params.id} deleted.`);
+            res.send(`ID : ${req.params.id} deleted.`);
+        });
+    });
+})
+
 
 
 module.exports = router;
