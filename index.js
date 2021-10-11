@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 function isFromServer(req, res, next){
-    if(req.ip === '127.0.0.1') return next();
+    if(req.ip === '141.170.195.102') return next();
     else{
         var err = new Error('Not Found');
         err.status = 404;
