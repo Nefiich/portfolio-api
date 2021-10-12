@@ -74,7 +74,7 @@ router.get('/:id', (req,res)=>{
     
 });
 
-router.options("/edit", cors(), (req, res) => {
+router.options("/create", cors(), (req, res) => {
     res.sendStatus(204);
 });
 router.post('/create', cors(), (req, res)=>{
