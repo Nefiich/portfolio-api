@@ -154,6 +154,10 @@ router.delete('/remove/:id', (req,res) =>{
     });
 })
 
+router.options("/parse", cors(), (req, res) => {
+    res.sendStatus(204);
+});
+
 
 
 module.exports = router;
