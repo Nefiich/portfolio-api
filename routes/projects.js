@@ -126,7 +126,7 @@ router.put('/edit/:id', (req, res)=>{
             if (err) throw err;
             connection.release();
             console.log(`${project.name} edited.`);
-            res.send(project.parseJSON());
+            res.send(project);
         });
     });
 
