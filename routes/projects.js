@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+var cors = require('cors')
 const Joi = require('joi');
 var mysql = require('mysql');
 
@@ -100,7 +101,10 @@ router.post('/create', (req, res)=>{
 
 });
 
-router.put('/edit/:id', (req, res)=>{
+router.options("/edit/:id", cors(), (req, res) => {
+    res.sendStatus(204);
+});
+router.put('/edit/:id', cors(), (req, res)=>{
 
     if(!req.params.id){
         res.status(400).send('Please provide an ID');
@@ -153,11 +157,6 @@ router.delete('/remove/:id', (req,res) =>{
         });
     });
 })
-
-router.options("/parse", cors(), (req, res) => {
-    res.sendStatus(204);
-});
-
 
 
 module.exports = router;
