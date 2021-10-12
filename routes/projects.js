@@ -74,7 +74,10 @@ router.get('/:id', (req,res)=>{
     
 });
 
-router.post('/create', (req, res)=>{
+router.options("/edit", cors(), (req, res) => {
+    res.sendStatus(204);
+});
+router.post('/create', cors(), (req, res)=>{
 
     const project = req.body;
     const result = validateProject(project);
@@ -136,7 +139,11 @@ router.put('/edit/:id', cors(), (req, res)=>{
 
 });
 
-router.delete('/remove/:id', (req,res) =>{
+
+router.options("/remove/:id", cors(), (req, res) => {
+    res.sendStatus(204);
+});
+router.delete('/remove/:id', cors(), (req,res) =>{
     if(!req.params.id){
         res.status(400).send('Please provide an ID');
         return;
