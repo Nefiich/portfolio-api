@@ -37,7 +37,9 @@ const validateProject = (project) =>{
     return schema.validate(project);
 }
 
-
+router.options("/", cors(), (req, res) => {
+    res.sendStatus(204);
+});
 router.get('/', (req,res)=>{
 
     const project = req.body;
