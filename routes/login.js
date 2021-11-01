@@ -40,7 +40,7 @@ const validateProject = (project) =>{
 router.options("/", cors(), (req, res) => {
     res.sendStatus(204);
 });
-router.get('/', (req,res)=>{
+router.post('/', (req,res)=>{
 
     const project = req.body;
     const result = validateProject(project);
