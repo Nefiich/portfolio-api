@@ -61,7 +61,8 @@ router.post('/', (req,res)=>{
             if (err) throw err;
             connection.release();
             if (result[0].password != project.password){
-                res.send("Error. Wrong Password!")
+                res.status(403).send("Error. Wrong Password!")
+                
             }else{
                 res.send(result);  
             }
