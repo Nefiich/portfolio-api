@@ -21,10 +21,10 @@ let con;
 const connect = async() =>{
     const dbPass = await getPass();
     con = mysql.createPool({
-        host: "remotemysql.com",
-        user: "t5l518VBF6",
+        host: "sql11.freemysqlhosting.net",
+        user: "sql11460774",
         password: dbPass,
-        database: 't5l518VBF6'
+        database: 'sql11460774'
     });
 }
 connect();
