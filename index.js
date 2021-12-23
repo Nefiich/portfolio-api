@@ -14,9 +14,6 @@ function isFromServer(req, res, next){
     }
 }
 
-const coursesRoute = require("./routes/courses");
-app.use("/api/courses", coursesRoute);
-
 const projectsRoute = require("./routes/projects");
 app.use("/api/projects", projectsRoute);
 
