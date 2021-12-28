@@ -67,8 +67,8 @@ router.get('/:id', (req,res)=>{
         con.query(sql, function (err, result) {
             if (err) throw err;
             connection.release();
-            console.log("1 record inserted");
-            res.send(project + " " + result);
+            console.log("1 record selected");
+            res.send(result);
         });
     });
     
